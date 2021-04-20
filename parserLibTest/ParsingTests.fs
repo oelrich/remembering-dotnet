@@ -7,10 +7,10 @@ open Hedgehog
 open ParserLib.Program
 open ParserLib.Parsing
 
-[<Fact>]
-let ``Obvious Error`` () =
-    let program = Add((Number 1), (Number 2))
-    test <@ evaluate program = 5 @>
+// [<Fact>]
+// let ``Obvious Error`` () =
+//     let program = Add((Number 1), (Number 2))
+//     test <@ evaluate program = 5 @>
 
 [<Fact>]
 let ``Evaluation`` () =
