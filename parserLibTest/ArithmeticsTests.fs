@@ -7,6 +7,9 @@ open Hedgehog
 open ParserLib.Arithmetics
 
 [<Fact>]
+let ``Zero is Zero`` () = test <@ equal Zero Zero @>
+
+[<Fact>]
 let ``Zero is 0`` () = test <@ value Zero = 0 @>
 
 [<Fact>]
