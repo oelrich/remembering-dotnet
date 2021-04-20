@@ -8,6 +8,11 @@ open ParserLib.Program
 open ParserLib.Parsing
 
 [<Fact>]
+let ``Obvious Error`` () =
+    let program = Add((Number 1), (Number 2))
+    test <@ evaluate program = 5 @>
+
+[<Fact>]
 let ``Evaluation`` () =
     let program = Add((Number 1), (Number 2))
     test <@ evaluate program = 3 @>
@@ -31,7 +36,7 @@ let ``Parse 23`` () =
            | Ok program -> evaluate program = number
            | Error err -> err = "parsing failed" @>
 
-let propNumber: Property<Unit> =
+let propNumber : Property<Unit> =
     property {
         let! number = Gen.int (Range.constantBounded ())
         return parse (sprintf "%i" number) = Result.Ok(Number number)
