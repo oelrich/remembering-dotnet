@@ -20,3 +20,9 @@ let ``Sum`` () =
     let a = Next(Zero)
     let b = Next(Next(Zero))
     test <@ sum a b |> value = 3 @>
+
+[<Fact>]
+let ``Sum equal`` () =
+    let a = Next(Zero)
+    let b = Next(Next(Zero))
+    test <@ equal (sum a b) (Next(Next(Next(Zero)))) @>
