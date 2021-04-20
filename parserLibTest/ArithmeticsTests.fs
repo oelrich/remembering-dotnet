@@ -10,6 +10,10 @@ open ParserLib.Arithmetics
 let ``Zero is Zero`` () = test <@ equal Zero Zero @>
 
 [<Fact>]
+let ``Zero is not Next(Zero)`` () =
+    test <@ not (equal Zero (Next(Zero))) @>
+
+[<Fact>]
 let ``Zero is 0`` () = test <@ value Zero = 0 @>
 
 [<Fact>]
